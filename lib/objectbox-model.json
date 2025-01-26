@@ -1,0 +1,158 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:6288021804736067416",
+      "lastPropertyId": "2:5676308571672906706",
+      "name": "UserLocationModel",
+      "properties": [
+        {
+          "id": "1:6257010865388122240",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5676308571672906706",
+          "name": "city",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:2452973746294805099",
+      "lastPropertyId": "9:5938616957233397448",
+      "name": "DailyWeatherModel",
+      "properties": [
+        {
+          "id": "1:1293477428237526697",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4933557903304263224",
+          "name": "date",
+          "type": 9
+        },
+        {
+          "id": "3:1286461287314963918",
+          "name": "minTemperature",
+          "type": 8
+        },
+        {
+          "id": "4:9200915160373252925",
+          "name": "maxTemperature",
+          "type": 8
+        },
+        {
+          "id": "5:957990163063378207",
+          "name": "dayTemperature",
+          "type": 8
+        },
+        {
+          "id": "6:6756635116227490504",
+          "name": "nightTemperature",
+          "type": 8
+        },
+        {
+          "id": "7:46966981681422884",
+          "name": "eveningTemperature",
+          "type": 8
+        },
+        {
+          "id": "8:2034363477451399101",
+          "name": "morningTemperature",
+          "type": 8
+        },
+        {
+          "id": "9:5938616957233397448",
+          "name": "weatherId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "1:1872868495458102860",
+          "relationTarget": "WeatherModel"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:8981142674719315566",
+      "lastPropertyId": "11:9082153850139394367",
+      "name": "WeatherModel",
+      "properties": [
+        {
+          "id": "1:8624271116058523298",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5983159573487143787",
+          "name": "temperature",
+          "type": 8
+        },
+        {
+          "id": "3:4988473289008592240",
+          "name": "pressure",
+          "type": 8
+        },
+        {
+          "id": "4:8151442913308565981",
+          "name": "pressureUnit",
+          "type": 9
+        },
+        {
+          "id": "5:3516165809266029767",
+          "name": "humidity",
+          "type": 8
+        },
+        {
+          "id": "6:6526001850813182779",
+          "name": "humidityUnit",
+          "type": 9
+        },
+        {
+          "id": "7:7932531917148480823",
+          "name": "uvIndex",
+          "type": 8
+        },
+        {
+          "id": "8:3122497610053376219",
+          "name": "windSpeed",
+          "type": 8
+        },
+        {
+          "id": "9:232746743219721653",
+          "name": "city",
+          "type": 9
+        },
+        {
+          "id": "10:3731586096053346804",
+          "name": "lastUpdated",
+          "type": 10
+        },
+        {
+          "id": "11:9082153850139394367",
+          "name": "description",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:8981142674719315566",
+  "lastIndexId": "1:1872868495458102860",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
