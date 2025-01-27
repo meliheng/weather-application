@@ -101,7 +101,7 @@ final class WeatherRemoteDataSourceImpl implements WeatherRemoteDatasource {
       );
       return WeatherAlertResponse.fromJson(json.decode(response.body));
     } on Exception catch (_) {
-      throw FlutterError(AppStrings.errorMessage);
+      throw FlutterError(AppStrings.dataNotFetch);
     }
   }
 

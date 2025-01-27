@@ -5,10 +5,7 @@ import 'package:weatherapp/core/components/custom_snackbar.dart';
 import 'package:weatherapp/core/components/error_widget.dart';
 import 'package:weatherapp/core/constants/app_strings.dart';
 import 'package:weatherapp/core/constants/ui_constants.dart';
-import 'package:weatherapp/core/helper/di/getit_init.dart';
 import 'package:weatherapp/core/mixin/theme_animation_mixin.dart';
-import 'package:weatherapp/weather/domain/usecase/get_weather_full_info_usecase.dart';
-import 'package:weatherapp/weather/domain/usecase/get_weather_overview_usecase.dart';
 import 'package:weatherapp/weather/presentation/weather/bloc/weather_bloc.dart';
 import 'package:weatherapp/weather/presentation/weather/ui/components/header_widget.dart';
 import 'package:weatherapp/weather/presentation/weather/ui/components/summary.dart';
@@ -25,10 +22,7 @@ class WeatherInfoScreen extends StatefulWidget {
 
 class _WeatherInfoScreenState extends State<WeatherInfoScreen>
     with TickerProviderStateMixin, ThemeAnimationMixin {
-  final WeatherBloc _weatherBloc = WeatherBloc(
-    GetWeatherFullInfoUsecase(getIt()),
-    GetWeatherOverviewUsecase(getIt()),
-  );
+  final WeatherBloc _weatherBloc = WeatherBloc();
   final _scrollController = ScrollController();
 
   @override

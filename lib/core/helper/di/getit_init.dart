@@ -6,8 +6,6 @@ import 'package:weatherapp/location/domain/usecase/get_city_usecase.dart';
 import 'package:weatherapp/weather/data/data_source/weather_remote_datasource.dart';
 import 'package:weatherapp/weather/data/repository/weather_repository_impl.dart';
 import 'package:weatherapp/weather/domain/repository/i_weather_repository.dart';
-import 'package:weatherapp/weather/domain/usecase/get_weather_alert_usecase.dart';
-import 'package:weatherapp/weather/domain/usecase/get_weather_full_info_usecase.dart';
 
 final getIt = GetIt.instance;
 
@@ -16,12 +14,7 @@ void setUp() {
     WeatherRemoteDataSourceImpl(),
   );
   getIt.registerSingleton<IWeatherRepository>(WeatherRepositoryImpl(getIt()));
-  getIt.registerSingleton<GetWeatherFullInfoUsecase>(
-    GetWeatherFullInfoUsecase(getIt()),
-  );
-  getIt.registerSingleton<GetWeatherAlertUsecase>(
-    GetWeatherAlertUsecase(getIt()),
-  );
+
   getIt.registerSingleton<CityRemoteDatasource>(CityRemoteDataSourceImpl());
 
   getIt.registerSingleton<ICityRepository>(CityRepositoryImpl(getIt()));

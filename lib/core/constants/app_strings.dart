@@ -20,6 +20,7 @@ final class AppStrings {
   static const String noCitiesFound = 'No cities found';
 
   static const String errorMessage = 'Something Went Wrong';
+  static const String dataNotFetch = 'Data not fetched';
   static const String tryAgain = 'TRY AGAIN';
   static const String networkError =
       "To get current weather, check the internet connection and try again";

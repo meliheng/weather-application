@@ -1,17 +1,21 @@
-import 'package:workmanager/workmanager.dart';
-import 'package:flutter/foundation.dart';
 import 'dart:io' show Platform;
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:weatherapp/core/services/notification_service.dart';
+import 'package:workmanager/workmanager.dart';
 
 @pragma('vm:entry-point')
 void callbackDispatcher() {
   Workmanager().executeTask((taskName, inputData) async {
+    await dotenv.load(fileName: ".env");
     try {
       switch (taskName) {
-        case 'checkWeatherAlerts':
+        case 'task-identifier':
           final place = inputData?['place'] as String?;
           if (place != null) {
             print("-------------$place");
-            // await NotificationService.instance.checkAndShowWeatherAlerts(place);
+            await NotificationService.instance.checkAndShowWeatherAlerts(place);
           }
       }
       return true;
@@ -79,15 +83,12 @@ class BackgroundService {
   static Future<void> _registerTask(String place) async {
     await Workmanager().registerPeriodicTask(
       'weatherAlerts',
-      'checkWeatherAlerts',
+      'task-identifier',
       frequency: const Duration(minutes: 15),
       initialDelay: const Duration(seconds: 10),
       inputData: {'place': place},
       existingWorkPolicy: ExistingWorkPolicy.replace,
-      constraints: Constraints(
-        networkType: NetworkType.connected,
-        requiresBatteryNotLow: true,
-      ),
+      constraints: Constraints(networkType: NetworkType.connected),
     );
   }
 

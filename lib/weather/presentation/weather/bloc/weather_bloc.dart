@@ -4,9 +4,11 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weatherapp/core/constants/app_strings.dart';
 import 'package:weatherapp/core/constants/global_constants.dart';
+import 'package:weatherapp/core/helper/di/getit_init.dart';
 import 'package:weatherapp/core/helper/storage/user_location_storage_helper.dart';
 import 'package:weatherapp/core/services/background_service.dart';
 import 'package:weatherapp/weather/domain/entity/weather_ui_model.dart';
+import 'package:weatherapp/weather/domain/repository/i_weather_repository.dart';
 import 'package:weatherapp/weather/domain/usecase/get_weather_full_info_usecase.dart';
 import 'package:weatherapp/weather/domain/usecase/get_weather_overview_usecase.dart';
 
@@ -14,11 +16,12 @@ part 'weather_event.dart';
 part 'weather_state.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-  final GetWeatherFullInfoUsecase getWeatherFullInfo;
-  final GetWeatherOverviewUsecase getWeatherOverview;
+  final GetWeatherFullInfoUsecase getWeatherFullInfo =
+      GetWeatherFullInfoUsecase(getIt<IWeatherRepository>());
+  final GetWeatherOverviewUsecase getWeatherOverview =
+      GetWeatherOverviewUsecase(getIt<IWeatherRepository>());
 
-  WeatherBloc(this.getWeatherFullInfo, this.getWeatherOverview)
-    : super(const WeatherLoading()) {
+  WeatherBloc() : super(const WeatherLoading()) {
     on<FetchWeather>(_onFetchWeather);
     on<InitializeWeather>(_onInitializeWeather);
 
