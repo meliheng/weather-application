@@ -6,7 +6,7 @@ This weather application provides users with real-time weather information, fore
 ## Installation Instructions
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/meliheng/weather-application.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -130,6 +130,6 @@ By adhering to Clean Architecture, the app achieves better modularity, testabili
 
 ## Screenshots
 
-<img src="https://github.com/meliheng/movie-case-study/blob/main/assets/screen_shots/1.png" alt="Screenshot 1" width="200"/> <img src="https://github.com/meliheng/movie-case-study/blob/main/assets/screen_shots/2.png" alt="Screenshot 2" width="200"/> <img src="https://github.com/meliheng/movie-case-study/blob/main/assets/screen_shots/3.png" alt="Screenshot 3" width="200"/>
+<img src="https://github.com/meliheng/weather-application/blob/main/assets/ss/ss1.png" alt="Screenshot 1" width="200"/> <img src="https://github.com/meliheng/weather-application/blob/main/assets/ss/ss3.png" alt="Screenshot 2" width="200"/> <img src="https://github.com/meliheng/weather-application/blob/main/assets/ss/ss2.png" alt="Screenshot 3" width="200"/>
 
 ---
