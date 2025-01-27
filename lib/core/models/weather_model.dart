@@ -1,4 +1,5 @@
 import 'package:objectbox/objectbox.dart';
+import 'package:weatherapp/weather/domain/entity/weather_daily_ui_model.dart';
 import 'package:weatherapp/weather/domain/entity/weather_ui_model.dart';
 
 @Entity()

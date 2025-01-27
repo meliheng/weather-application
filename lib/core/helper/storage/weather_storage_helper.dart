@@ -3,6 +3,7 @@ import 'package:weatherapp/core/models/weather_model.dart';
 import 'package:weatherapp/weather/domain/entity/weather_ui_model.dart';
 
 class WeatherStorageHelper {
+  WeatherStorageHelper._();
   static Future<void> saveWeather(WeatherUiModel weather, String city) async {
     final weatherModel = WeatherModel.fromUiModel(weather, city);
 
@@ -29,7 +30,6 @@ class WeatherStorageHelper {
           );
 
       if (cityWeather.isNotEmpty) {
-        // The daily data will be automatically loaded due to ObjectBox relations
         return cityWeather.first.toUiModel();
       }
       return null;

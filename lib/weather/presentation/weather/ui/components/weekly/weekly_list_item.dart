@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/core/constants/ui_constants.dart';
 import 'package:weatherapp/core/extensions/context_extension.dart';
 import 'package:weatherapp/core/extensions/double_extension.dart';
 import 'package:weatherapp/core/extensions/string_extension.dart';
-import 'package:weatherapp/weather/domain/entity/weather_ui_model.dart';
+import 'package:weatherapp/weather/domain/entity/weather_daily_ui_model.dart';
 
 class WeeklyListItem extends StatelessWidget {
   const WeeklyListItem({
@@ -18,7 +19,7 @@ class WeeklyListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: itemWidth,
-      margin: const EdgeInsets.symmetric(horizontal: 4),
+      margin: const EdgeInsets.symmetric(horizontal: UIConstants.smallSpacing),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

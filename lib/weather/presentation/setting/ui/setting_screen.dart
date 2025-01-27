@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weatherapp/core/constants/app_strings.dart';
+import 'package:weatherapp/core/constants/ui_constants.dart';
 import 'package:weatherapp/core/mixin/theme_animation_mixin.dart';
 import 'package:weatherapp/core/router/app_router.gr.dart';
 import 'package:weatherapp/weather/presentation/setting/ui/components/setting_tile.dart';
@@ -25,7 +26,7 @@ class _SettingScreenState extends State<SettingScreen>
             backgroundColor: backgroundColor,
             appBar: AppBar(title: Text(AppStrings.settings)),
             body: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(UIConstants.mediumSpacing),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

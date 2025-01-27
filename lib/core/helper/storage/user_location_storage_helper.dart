@@ -5,7 +5,7 @@ class UserLocationStorageHelper {
   static Future<String> getCity() async {
     final locations =
         await ObjectBoxHelper.instance.readData<UserLocationModel>();
-    return locations.firstOrNull?.city ?? "Los Angeles";
+    return locations.firstOrNull?.city ?? "London";
   }
 
   static Future<void> saveCity(String city) async {

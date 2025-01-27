@@ -7,7 +7,7 @@ extension StringExtension on String {
       final date = DateTime.parse(this);
       final now = DateTime.now();
       final tomorrow = DateTime.now().add(const Duration(days: 1));
-      
+
       if (DateUtils.isSameDay(date, now)) {
         return 'Today';
       } else if (DateUtils.isSameDay(date, tomorrow)) {

@@ -1,6 +1,8 @@
 import 'dart:convert';
+
 import 'package:flutter/widgets.dart';
 import 'package:weatherapp/core/constants/api_constants.dart';
+import 'package:weatherapp/core/constants/app_strings.dart';
 import 'package:weatherapp/core/constants/global_constants.dart';
 import 'package:weatherapp/core/helper/network/http_service.dart';
 import 'package:weatherapp/core/helper/storage/user_location_storage_helper.dart';
@@ -83,10 +85,10 @@ final class WeatherRemoteDataSourceImpl implements WeatherRemoteDatasource {
                     .toList(),
           );
         }
-        throw FlutterError("Something Went Wrong!");
+        throw FlutterError(AppStrings.errorMessage);
       }
     } on Exception catch (_) {
-      throw FlutterError("Something Went Wrong!");
+      throw FlutterError(AppStrings.errorMessage);
     }
   }
 
@@ -94,11 +96,12 @@ final class WeatherRemoteDataSourceImpl implements WeatherRemoteDatasource {
   Future<WeatherAlertResponse> getWeatherAlerts(String place) async {
     try {
       final response = await _httpService.get(
-        "${ApiConstants.weatherAlertsPath}?place=$place",
+        ApiConstants.weatherAlertsPath,
+        queryParameters: {"place": place},
       );
       return WeatherAlertResponse.fromJson(json.decode(response.body));
     } on Exception catch (_) {
-      throw Error();
+      throw FlutterError(AppStrings.errorMessage);
     }
   }
 

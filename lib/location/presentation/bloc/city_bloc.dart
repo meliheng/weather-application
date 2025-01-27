@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:weatherapp/core/helper/storage/user_location_storage_helper.dart';
 import 'package:weatherapp/core/models/data_state.dart';
 import 'package:weatherapp/location/domain/entity/city_ui_model.dart';
@@ -13,7 +14,14 @@ part 'city_state.dart';
 class CityBloc extends Bloc<CityEvent, CityState> {
   final GetCityUsecase _getCityUsecase;
   CityBloc(this._getCityUsecase) : super(CityInitial()) {
-    on<CitySearchEvent>(_onCitySearchEvent);
+    on<CitySearchEvent>(
+      _onCitySearchEvent,
+      transformer: (events, mapper) {
+        return events
+            .debounceTime(const Duration(seconds: 1))
+            .switchMap(mapper);
+      },
+    );
     on<CitySelectEvent>(_onCityChanged);
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/core/components/custom_search_field.dart';
 import 'package:weatherapp/core/constants/app_strings.dart';
+import 'package:weatherapp/core/constants/ui_constants.dart';
 import 'package:weatherapp/core/extensions/context_extension.dart';
 import 'package:weatherapp/location/presentation/bloc/city_bloc.dart';
 
@@ -18,7 +19,12 @@ class CitySearchField extends StatelessWidget implements PreferredSizeWidget {
     return PreferredSize(
       preferredSize: const Size.fromHeight(65),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+        padding: const EdgeInsets.fromLTRB(
+          UIConstants.defaultSpacing,
+          0,
+          UIConstants.defaultSpacing,
+          UIConstants.mediumSpacing,
+        ),
         child: CustomSearchField(
           hint: AppStrings.search,
           prefixIcon: Icon(

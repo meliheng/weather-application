@@ -1,13 +1,13 @@
 import 'package:get_it/get_it.dart';
-import 'package:weatherapp/weather/data/data_source/weather_remote_datasource.dart';
-import 'package:weatherapp/weather/data/repository/weather_repository_impl.dart';
-import 'package:weatherapp/weather/domain/repository/i_weather_repository.dart';
-import 'package:weatherapp/weather/domain/usecase/get_weather_full_info_usecase.dart';
-import 'package:weatherapp/weather/domain/usecase/get_weather_alert_usecase.dart';
 import 'package:weatherapp/location/data/data_source/city_remote_datasource.dart';
 import 'package:weatherapp/location/data/repository/city_repository_impl.dart';
 import 'package:weatherapp/location/domain/repository/i_city_repository.dart';
 import 'package:weatherapp/location/domain/usecase/get_city_usecase.dart';
+import 'package:weatherapp/weather/data/data_source/weather_remote_datasource.dart';
+import 'package:weatherapp/weather/data/repository/weather_repository_impl.dart';
+import 'package:weatherapp/weather/domain/repository/i_weather_repository.dart';
+import 'package:weatherapp/weather/domain/usecase/get_weather_alert_usecase.dart';
+import 'package:weatherapp/weather/domain/usecase/get_weather_full_info_usecase.dart';
 
 final getIt = GetIt.instance;
 

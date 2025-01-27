@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:weatherapp/core/constants/ui_constants.dart';
 import 'package:weatherapp/core/extensions/context_extension.dart';
 import 'package:weatherapp/weather/presentation/weather/ui/components/circular_card.dart';
 
@@ -21,12 +22,15 @@ class ExtraInfoCard extends StatelessWidget {
       children: [
         CircularCard(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: UIConstants.defaultSpacing,
+              vertical: UIConstants.mediumSpacing,
+            ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 FaIcon(icon, color: Colors.white, size: 15),
-                SizedBox(width: 5),
+                SizedBox(width: UIConstants.mediumSpacing),
                 Text(title, style: context.textTheme.labelMedium),
               ],
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:weatherapp/core/constants/ui_constants.dart';
 import 'package:weatherapp/core/extensions/context_extension.dart';
 
 class SettingTile extends StatelessWidget {
@@ -18,11 +19,13 @@ class SettingTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(
+          vertical: UIConstants.mediumSpacing,
+        ),
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(UIConstants.defaultSpacing),
           ),
           child: ListTile(
             title: Text(title, style: context.textTheme.labelSmall),

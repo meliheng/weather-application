@@ -1,5 +1,5 @@
-import 'package:weatherapp/weather/data/model/daily.dart';
 import 'package:weatherapp/weather/data/model/weather_info_model.dart';
+import 'package:weatherapp/weather/domain/entity/weather_daily_ui_model.dart';
 
 final class WeatherUiModel {
   final double? temperature;
@@ -40,38 +40,6 @@ final class WeatherUiModel {
           model?.daily
               ?.map((e) => WeatherDailyUiModel.fromModel(model: e))
               .toList(),
-    );
-  }
-}
-
-final class WeatherDailyUiModel {
-  final String? date;
-  final double? minTemperature;
-  final double? maxTemperature;
-  final double? dayTemperature;
-  final double? nightTemperature;
-  final double? eveningTemperature;
-  final double? morningTemperature;
-
-  WeatherDailyUiModel({
-    this.date,
-    this.minTemperature,
-    this.maxTemperature,
-    this.dayTemperature,
-    this.nightTemperature,
-    this.eveningTemperature,
-    this.morningTemperature,
-  });
-
-  factory WeatherDailyUiModel.fromModel({Daily? model}) {
-    return WeatherDailyUiModel(
-      date: model?.date,
-      minTemperature: model?.temperature?.minimum,
-      maxTemperature: model?.temperature?.maximum,
-      dayTemperature: model?.temperature?.dayTime,
-      nightTemperature: model?.temperature?.nightTime,
-      eveningTemperature: model?.temperature?.evening,
-      morningTemperature: model?.temperature?.morning,
     );
   }
 }

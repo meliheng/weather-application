@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/core/constants/ui_constants.dart';
 import 'package:weatherapp/weather/domain/entity/weather_ui_model.dart';
 import 'package:weatherapp/weather/presentation/weather/ui/components/weekly/weekly_list_item.dart';
 
@@ -25,9 +26,11 @@ class WeeklyListView extends StatelessWidget {
 
         return Container(
           height: listViewHeight,
-          margin: const EdgeInsets.only(bottom: 8),
+          margin: const EdgeInsets.only(bottom: UIConstants.mediumSpacing),
           child: ListView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(
+              horizontal: UIConstants.mediumSpacing,
+            ),
             scrollDirection: Axis.horizontal,
             itemCount: weather.daily?.length ?? 0,
             itemBuilder: (context, index) {
